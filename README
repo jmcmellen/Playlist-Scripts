@@ -28,10 +28,30 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ********Playlist-Scripts**********
 
-The Python scripts in this repo are dependent on Beautiful Soup. You can get it here: http://www.crummy.com/software/BeautifulSoup/ I have tested this script with version 3.0.8.1, Python version 2.4. Beautiful Soup is an HTML parser that makes it possible to dig for data in an HTML page.
+The Python scripts in this repo are dependent on Beautiful Soup.
+You can get it here: http://www.crummy.com/software/BeautifulSoup/
+I have tested this script with version 3.0.8.1, Python version 2.4. 
+Beautiful Soup is an HTML parser that makes it possible to dig for 
+data in an HTML page.
 
 ** getC24listings.py **
-This script generates a URL to get the current day's HTML listings for C24. It then parses the listings and builds a list in an XML format. Each hour is saved to a seperate file so it can be loaded individually. Since the C24 listings are not in a "Artist/Song Title/Album" format, we fudge a little, substituting Composer for Artist and the first listed performer as Album. The listings seem to be in Central Time, so the hours would need to be adjusted plus/minus for other timezones. I run this in a daily overnight cronjob.
+This script generates a URL to get the current day's HTML listings 
+for C24. It then parses the listings and builds a list in an XML 
+format. Each hour is saved to a seperate file so it can be loaded 
+individually. Since the C24 listings are not in a "Artist/Song 
+Title/Album" format, we fudge a little, substituting Composer for 
+Artist and the first listed performer as Album. The listings seem 
+to be in Central Time, so the hours would need to be adjusted 
+plus/minus for other timezones. I run this in a daily overnight 
+cronjob.
 
 ** getHOSlistings.py **
-This script is designed to take text as input on STDIN (in my case, an email from the HOS producer) and look for the show (program) number for the week. The number is used to generate a URL for the show playlist in a basic HTML format. The resulting HTML is parsed and builds a list of Artist/Title/Album in an XML format. The file generated is named based on the date and time that the playlist is applicable. I use an email alias to route the HOS email to the script so that the email triggers the playlist lookup.
+This script is designed to take text as input on STDIN (in my 
+case, an email from the HOS producer) and look for the show 
+(program) number for the week. The number is used to generate a 
+URL for the show playlist in a basic HTML format. The resulting 
+HTML is parsed and builds a list of Artist/Title/Album in an 
+XML format. The file generated is named based on the date and 
+time that the playlist is applicable. I use an email alias to 
+route the HOS email to the script so that the email triggers the 
+playlist lookup.
